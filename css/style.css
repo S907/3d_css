@@ -1,0 +1,94 @@
+:root {
+  --boxColor:#0ff7;
+}
+
+body {
+  background-color: #000;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 75px;
+  -webkit-perspective: 15em;
+          perspective: 15em;
+  -webkit-perspective-origin: 50% calc(50% -2em);
+          perspective-origin: 50% calc(50% -2em);
+}
+
+.scene {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.ball {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: lightgreen;
+  position: absolute;
+  left: -0.5em;
+  bottom: 1em;
+}
+
+.cube {
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: -1em;
+  left: -1em;
+}
+
+.cube .left, .cube .right, .cube .front, .cube .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--boxColor);
+}
+
+.cube .front {
+  -webkit-transform: translateZ(1em);
+          transform: translateZ(1em);
+}
+
+.cube .right {
+  -webkit-transform: rotateY(90deg) translateZ(1em);
+          transform: rotateY(90deg) translateZ(1em);
+}
+
+.cube .back {
+  -webkit-transform: rotateY(180deg) translateZ(1em);
+          transform: rotateY(180deg) translateZ(1em);
+}
+
+.cube .left {
+  -webkit-transform: rotateY(270deg) translateZ(1em);
+          transform: rotateY(270deg) translateZ(1em);
+}
+
+.cube .top {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  background: var(--boxColor);
+  -webkit-transform: translateY(-50%) rotateX(90deg);
+          transform: translateY(-50%) rotateX(90deg);
+}
+
+.floor {
+  position: absolute;
+  top: 1em;
+  -webkit-transform: translate(-50%, -50%) rotateX(90deg);
+          transform: translate(-50%, -50%) rotateX(90deg);
+  width: 15em;
+  height: 15em;
+  background-image: repeating-conic-gradient(from 45deg, #111 0deg 90deg, #222 90deg 180deg);
+  background-size: 1em 1em;
+}
+/*# sourceMappingURL=style.css.map */
